@@ -1,0 +1,15 @@
+<div class="wrapper">
+    <form>
+        <h1>REGISTER</h1>
+        <input [formControl] = "username" type="text" id="username" placeholder="Username">
+        <input type="text" id="FirstName" placeholder="First Name">
+        <input type="text" id="LastName" placeholder="Last Name">
+        <input type="email" id="Email" placeholder="Email">
+        <input type="password" id="password" placeholder="Password">
+        <input type="password" id="confirmpassword" placeholder="Confirm Password">
+        <div class="buttoncont">
+            <button (click)="loginCheck()">login</button>
+            <button>register</button>
+        </div>
+    </form>
+</div>
