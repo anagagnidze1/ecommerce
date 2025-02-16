@@ -12,7 +12,7 @@ import { RegisterComponent } from './register/register.component';
 export class AppComponent {
   public title = 'ecommerce';
 
-  public loginPage!: boolean;
+  public loginPage = true;
 
 
   constructor(){
