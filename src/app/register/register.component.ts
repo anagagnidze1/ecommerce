@@ -3,6 +3,7 @@ import { LoginRegister } from '../login-register-form/login-register.abstract-cl
 import { AbstractControl, FormControl, FormGroup, FormsModule, ReactiveFormsModule, ValidationErrors, Validators } from '@angular/forms';
 import { ErrorComponent } from '../error/error.component';
 import { NgClass } from '@angular/common';
+import { tap } from 'rxjs';
 
 @Component({
   selector: 'app-register',
@@ -28,6 +29,14 @@ export class RegisterComponent extends LoginRegister{
 
   constructor(){
     super()
+
+    this.userForm.valueChanges
+      .pipe(
+        tap((value) => {
+          console.log(value);
+        })
+    )
+
     console.log("component is logged")
   }
 

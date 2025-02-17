@@ -21,7 +21,8 @@
     input{
         border-radius: 5px;
         height: 30px;
-        margin-bottom: 10px;
+        border-color: lightgrey;
+        outline: none !important;
     }
     .buttoncont{
         display: flex;
@@ -38,5 +39,10 @@
         font-size: 15px;
         margin-top: 15px;
         cursor: pointer;
+        transition: all 0.3s ease-in-out;
+    }
+    button:hover {
+        background-color: rgb(91, 92, 112);
+        transform: scale(1.05);
     }
 }
