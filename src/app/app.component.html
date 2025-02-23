@@ -1,9 +1,14 @@
 <div class="main">
-    @if(loginPage) {
-        <app-login (register) =  "register()" />
-
-    }@else{
-        <app-register (login) = "goToLogin()" />
+    @switch(userService.currentState()){
+        @case(currentState.LOGIN){
+            <app-login/>
+        }
+        @case(currentState.REGISTER){
+            <app-register/>
+        }
+        @case(currentState.FURNITURE){
+            <app-furniture/>
+        }
     }
 </div>
 

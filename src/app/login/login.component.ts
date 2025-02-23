@@ -1,7 +1,9 @@
-import { Component, Output, EventEmitter} from '@angular/core';
+import { Component} from '@angular/core';
 import { LoginRegister } from '../login-register-form/login-register.abstract-class';
 import { FormsModule } from '@angular/forms';
 import { Subject } from 'rxjs';
+import { UserService } from '../shared/services/user.service';
+import { currentState } from '../shared/enums/enums';
 
 interface IUser{
   username: string,
@@ -15,14 +17,13 @@ interface IUser{
   styleUrl: './login.component.scss'
 })
 export class LoginComponent extends LoginRegister{
-  @Output() register = new EventEmitter();
 
   private mySubj = new Subject<IUser>();
 
   public username!: string
   public password!: string
 
-  constructor(){
+  constructor(public userService: UserService){
     super()
 
     this.mySubj.subscribe((value) => {
@@ -31,13 +32,13 @@ export class LoginComponent extends LoginRegister{
 
   }
   public login(){
-    this.mySubj.next({
-      username: this.username,
-      password: this.password,
-    })
-    // console.log(this.username, this.password)
+    console.log("Before:", this.userService.currentState());
+    this.userService.currentState.set(currentState.FURNITURE);
+    console.log("After:", this.userService.currentState());
 
   }
-    
+  public register(){
+    this.userService.currentState.set(currentState.REGISTER);
+  }
 
 }

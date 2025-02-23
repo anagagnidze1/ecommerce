@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { UserService } from './shared/services/user.service';
+import { currentState } from './shared/enums/enums';
+import { FurnitureComponent } from './furniture/furniture/furniture.component';
 
 @Component({
   selector: 'app-root',
-  imports: [LoginComponent, RegisterComponent],
+  imports: [LoginComponent, RegisterComponent, FurnitureComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -14,10 +16,13 @@ export class AppComponent {
 
   public loginPage = true;
 
+  public currentState = currentState;
 
-  constructor(){
+  constructor(public userService: UserService){
     console.log("app component innited")
   }
+
+
   public goToLogin(){
     this.loginPage = true;
     console.log("app component")
@@ -26,4 +31,6 @@ export class AppComponent {
     this.loginPage = false;
     console.log("app component register")
   }
+
+
 }

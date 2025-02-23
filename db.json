@@ -1,0 +1,36 @@
+{
+  "furniture": [
+    {
+      "id": 1,
+      "name": "Wooden Dining Table",
+      "price": 299.99,
+      "category": "Dining",
+      "image": "https://www.urbanbarn.com/dw/image/v2/BCKH_PRD/on/demandware.static/-/Sites-masterCatalog_Urban_Barn/default/dwf7783d65/images/original/222357-lifestyle.jpg?sw=1490&sh=1060&q=70",
+      "description": "A high-quality wooden dining table with six chairs."
+    },
+    {
+      "id": 2,
+      "name": "Sofa Set",
+      "price": 1200,
+      "category": "living room",
+      "image": "https://www.duraster.com/cdn/shop/products/ummed-wooden-sofa-set_d82c60c0-07bf-4f66-86e2-8fe642e54ecc.jpg?v=1645421542",
+      "description": "A luxurious 3-piece sofa set for your living room."
+    },
+    {
+      "id": 3,
+      "name": "Dining Table",
+      "price": 800,
+      "category": "dining",
+      "image": "https://www.tiptoe.fr/wp-content/uploads/2021/03/09_TIPTOE-PAPOTTE-300010-1_JMauloubier-WEB.jpg?twic=v1/output=preview",
+      "description": "A sturdy dining table made from high-quality wood."
+    },
+    {
+      "id": "c6ac",
+      "username": "adsd",
+      "firstName": "sdssd",
+      "lastName": "sdas",
+      "email": "sadsa@sad",
+      "password": "Tjdhashd432523"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+<div>
+    <h1>Discover The Best Furniture For You</h1>
+    <div class="container">
+        @for (furniture of furniture$ | async; track $index){
+            <div class="item">
+                <h2>{{ furniture.name }}</h2>
+                <p>Price: ${{ furniture.price }}</p>
+                <p>Category: {{ furniture.category }}</p>
+                <img [src]="furniture.image" alt="{{ furniture.name }}" width="200">
+                <p>{{ furniture.description }}</p>
+            </div>
+        }
+    </div>
+</div>

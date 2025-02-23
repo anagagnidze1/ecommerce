@@ -1,9 +1,12 @@
-import { Component, Output, EventEmitter } from '@angular/core';
-import { LoginRegister } from '../login-register-form/login-register.abstract-class';
-import { AbstractControl, FormControl, FormGroup, FormsModule, ReactiveFormsModule, ValidationErrors, Validators } from '@angular/forms';
-import { ErrorComponent } from '../error/error.component';
+import { Component} from '@angular/core';
+import {FormsModule, ReactiveFormsModule, } from '@angular/forms';
+import { ErrorComponent } from '../shared/error/error.component';
 import { NgClass } from '@angular/common';
-import { tap } from 'rxjs';
+import { userForm } from '../shared/user-form/user-form.class';
+import { UserService } from '../shared/services/user.service';
+import { currentState } from '../shared/enums/enums';
+import { IUserRegistration} from '../shared/interface/users';
+
 
 @Component({
   selector: 'app-register',
@@ -11,60 +14,42 @@ import { tap } from 'rxjs';
   templateUrl: './register.component.html',
   styleUrl: './register.component.scss'
 })
-export class RegisterComponent extends LoginRegister{
-
-  @Output() login = new EventEmitter();
+export class RegisterComponent extends userForm{
 
   public title!: string 
 
 
-  public userForm = new FormGroup({
-    username: new FormControl('',[Validators.required, Validators.minLength(3), usernameValidator()]),
-    firstName: new FormControl('',[Validators.required, Validators.minLength(3)]),
-    lastName: new FormControl('',[Validators.required, Validators.minLength(3)]),
-    email: new FormControl('',[Validators.required, Validators.email]),
-    password: new FormControl('',[Validators.required, Validators.minLength(8), Validators.pattern('^[a-zA-Z0-9]*$')]),
 
-  });
-
-  constructor(){
+  constructor(public userService: UserService){
     super()
 
-    this.userForm.valueChanges
-      .pipe(
-        tap((value) => {
-          console.log(value);
-        })
-    )
 
     console.log("component is logged")
   }
 
   public register(){
     console.log("register");
-    console.log(this.userForm);
-    console.log(this.userForm.valid);
-  }
+    if (this.userForm.valid) {
+      const userInfo = this.userForm.value as IUserRegistration;
+      
+      console.log('User info:', userInfo);
 
-  public loginCheck(){
-    console.log("login check");
-    this.login.emit();
-  }
-  public get usernameControl(): FormControl {
-    return this.userForm.get('username') as FormControl;
-  }
-}
-
-function usernameValidator(): (
-  contol: AbstractControl
-) => ValidationErrors | null {
-  return (contol: AbstractControl) => {
-    const pattern = /^[a-zA-Z]*$/;
-
-    if (contol.value && !pattern.test(contol.value)) {
-      return { onlyLathinLetters: true };
+      this.userService.createUser(userInfo).subscribe({
+        next: (response) => {
+          console.log('Furniture created successfully:', response);
+          this.userService.currentState.set(currentState.FURNITURE);
+        },
+        error: (error) => {
+          console.error('Error creating furniture:', error);
+        },
+      });
+    } else {
+      console.log('Form is invalid');
     }
-
-    return null;
-  };
+  
+    
+  }
+  public login(){
+    this.userService.currentState.set(currentState.LOGIN);
+  }
 }

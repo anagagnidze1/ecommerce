@@ -1,12 +1,17 @@
 <div class = "wrapper">
-    <form>
-        <h1>LOGIN</h1>
-        <input [(ngModel)] = "username" [ngModelOptions]="{ standalone: true }" type="text" id="username" placeholder="Username">
-        <input [(ngModel)] = "password" [ngModelOptions]="{ standalone: true }"type="text" id="password" placeholder="password">
-        <div class="buttoncont">
-            <button (click)="login()">login</button>
-            <button (click)="register.emit()">register</button>
-        </div>
-        
-    </form>
+    <div class="form-section">
+        <form>
+            <h1>LOGIN</h1>
+            <input [(ngModel)] = "username" [ngModelOptions]="{ standalone: true }" type="text" id="username" placeholder="Username">
+            <input [(ngModel)] = "password" [ngModelOptions]="{ standalone: true }"type="text" id="password" placeholder="password">
+            <div class="buttoncont">
+                <button (click)="login()">login</button>
+                <button (click)="register()">register</button>
+            </div>
+            
+        </form>
+    </div>
+    <div class="image-section">
+        <img src="https://m.media-amazon.com/images/I/71uXfZCEZXL.jpg" alt="Image">
+    </div>
  </div>
