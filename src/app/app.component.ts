@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import { UserService } from './shared/services/user.service';
 import { currentState } from './shared/enums/enums';
 import { FurnitureComponent } from './furniture/furniture/furniture.component';
+import { UserService } from './user.service';
 
 @Component({
   selector: 'app-root',

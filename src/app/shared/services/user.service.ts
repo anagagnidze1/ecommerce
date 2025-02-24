@@ -1,23 +1,29 @@
 import { Injectable, signal } from '@angular/core';
-import { currentState } from '../enums/enums';
-import { EcommerceRestService } from '../../core/services/ecommerce.rest.service';
 import { Observable } from 'rxjs';
-import { IFurniture } from '../interface/interfaces';
 import { IUserRegistration } from '../interface/users';
+import { userRestService } from '../../core/services/user.rest.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-  public currentState = signal(currentState.LOGIN);
-  constructor(private furnitureRest: EcommerceRestService) { }
+  public currentState = signal(this.currentState.LOGIN);
 
-  public getFurniture(): Observable<IFurniture[]>{
-    return this.furnitureRest.getFurniture();
+  constructor(private UsersRest: userRestService) {}
+
+  public getUser(): Observable<IUserRegistration[]> {
+    return this.UsersRest.getUser();
   }
 
   public createUser(user: IUserRegistration): Observable<IUserRegistration> {
-    return this.furnitureRest.createUser(user);
+    return this.UsersRest.createUser(user);
   }
 
+  public updateUser(user: IUserRegistration): Observable<IUserRegistration> {
+    return this.UsersRest.updateUser(user);
+  }
+
+  public deleteUser(id: number): Observable<IUserRegistration> {
+    return this.UsersRest.deleteUser(id);
+  }
 }

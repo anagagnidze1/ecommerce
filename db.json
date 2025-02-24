@@ -23,14 +23,8 @@
       "category": "dining",
       "image": "https://www.tiptoe.fr/wp-content/uploads/2021/03/09_TIPTOE-PAPOTTE-300010-1_JMauloubier-WEB.jpg?twic=v1/output=preview",
       "description": "A sturdy dining table made from high-quality wood."
-    },
-    {
-      "id": "c6ac",
-      "username": "adsd",
-      "firstName": "sdssd",
-      "lastName": "sdas",
-      "email": "sadsa@sad",
-      "password": "Tjdhashd432523"
     }
-  ]
+  ],
+  "users":[]
+
 }

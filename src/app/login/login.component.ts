@@ -2,7 +2,7 @@ import { Component} from '@angular/core';
 import { LoginRegister } from '../login-register-form/login-register.abstract-class';
 import { FormsModule } from '@angular/forms';
 import { Subject } from 'rxjs';
-import { UserService } from '../shared/services/user.service';
+import { UserService } from '../shared/services/furniture.service';
 import { currentState } from '../shared/enums/enums';
 
 interface IUser{

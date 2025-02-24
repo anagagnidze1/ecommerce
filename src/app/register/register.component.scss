@@ -65,4 +65,12 @@ $text-light: #ffffff;
         background-color: rgb(91, 92, 112);
         transform: scale(1.05);
     }
+    .image-section{
+        width: 50%;
+
+        img{
+            width: 100%;
+            height: auto;
+        }
+    }
 }

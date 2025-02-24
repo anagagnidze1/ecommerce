@@ -3,9 +3,9 @@ import {FormsModule, ReactiveFormsModule, } from '@angular/forms';
 import { ErrorComponent } from '../shared/error/error.component';
 import { NgClass } from '@angular/common';
 import { userForm } from '../shared/user-form/user-form.class';
-import { UserService } from '../shared/services/user.service';
 import { currentState } from '../shared/enums/enums';
 import { IUserRegistration} from '../shared/interface/users';
+import { UserService } from '../user.service';
 
 
 @Component({
@@ -35,11 +35,11 @@ export class RegisterComponent extends userForm{
       console.log('User info:', userInfo);
 
       this.userService.createUser(userInfo).subscribe({
-        next: (response) => {
+        next: (response: IUserRegistration) => {
           console.log('Furniture created successfully:', response);
           this.userService.currentState.set(currentState.FURNITURE);
         },
-        error: (error) => {
+        error: (error: Error) => {
           console.error('Error creating furniture:', error);
         },
       });

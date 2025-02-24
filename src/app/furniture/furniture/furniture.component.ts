@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject, catchError, of, Subject, takeUntil, tap } from 'rxjs';
 import { IFurniture } from '../../shared/interface/interfaces';
-import { UserService } from '../../shared/services/user.service';
+import { furnitureService } from '../../shared/services/furniture.service';
 import { AsyncPipe } from '@angular/common';
 
 @Component({
@@ -15,7 +15,7 @@ export class FurnitureComponent implements OnInit {
   private destroy$ = new Subject<void>();
   public furniture$ = new BehaviorSubject<IFurniture[]>([]);
 
-  constructor(public userService: UserService) {
+  constructor(public furnitureService: furnitureService) {
     console.log("FurnitureComponent initialized!");
   }
   public ngOnInit() {
@@ -23,7 +23,7 @@ export class FurnitureComponent implements OnInit {
   }
 
   public getFurniture(): void{
-    this.userService
+    this.furnitureService
       .getFurniture()
       .pipe(
         takeUntil(this.destroy$),
@@ -31,9 +31,9 @@ export class FurnitureComponent implements OnInit {
           console.error('Error fetching customers: ', error);
           return of([]);
         }),
-        tap((customers: IFurniture[]) => {
-          console.log('customers: ', customers);
-          this.furniture$.next(customers);
+        tap((furniture: IFurniture[]) => {
+          console.log('customers: ', furniture);
+          this.furniture$.next(furniture);
         })
       )
     .subscribe();

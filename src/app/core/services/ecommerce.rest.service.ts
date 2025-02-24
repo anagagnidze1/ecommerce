@@ -3,7 +3,6 @@ import { Injectable } from "@angular/core";
 import { apiUrls } from "../apiUrls";
 import { Observable } from "rxjs";
 import { IFurniture } from "../../shared/interface/interfaces";
-import { IUserRegistration } from "../../shared/interface/users";
 
 @Injectable({
     providedIn: 'root',
@@ -17,8 +16,8 @@ export class EcommerceRestService{
     public getFurnitureById(id: number): Observable<IFurniture>{
         return this.http.get<IFurniture>(`${apiUrls.furniture}/${id}`);
     }
-    public createUser(user: IUserRegistration): Observable<IUserRegistration> {
-        return this.http.post<IUserRegistration>(apiUrls.furniture, user);
+    public createFurniture(furniture: IFurniture): Observable<IFurniture> {
+        return this.http.post<IFurniture>(apiUrls.furniture, furniture);
     }
     public updateFurniture(furniture: IFurniture): Observable<IFurniture> {
         return this.http.put<IFurniture>(
