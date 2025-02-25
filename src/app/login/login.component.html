@@ -3,7 +3,7 @@
         <form>
             <h1>LOGIN</h1>
             <input [(ngModel)] = "username" [ngModelOptions]="{ standalone: true }" type="text" id="username" placeholder="Username">
-            <input [(ngModel)] = "password" [ngModelOptions]="{ standalone: true }"type="text" id="password" placeholder="password">
+            <input [(ngModel)] = "password" [ngModelOptions]="{ standalone: true }"type="password" id="password" placeholder="password">
             <div class="buttoncont">
                 <button (click)="login()">login</button>
                 <button (click)="register()">register</button>
@@ -15,3 +15,7 @@
         <img src="https://m.media-amazon.com/images/I/71uXfZCEZXL.jpg" alt="Image">
     </div>
  </div>
+
+ @if(loginFailed()){
+    <app-error message ="Login Failed"/>
+ }

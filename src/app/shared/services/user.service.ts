@@ -9,7 +9,8 @@ import { userRestService } from '../../core/services/user.rest.service';
 export class UserService {
 
   public showSpinner = signal(false);
-  
+  public loggedUser = signal<IUserRegistration | null>(null);
+
   constructor(private UsersRest: userRestService) {}
 
   public getUser(): Observable<IUserRegistration[]> {

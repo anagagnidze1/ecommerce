@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component, signal} from '@angular/core';
 import {FormsModule, ReactiveFormsModule, } from '@angular/forms';
 import { ErrorComponent } from '../shared/error/error.component';
 import { NgClass } from '@angular/common';
@@ -19,7 +19,7 @@ import { Router } from '@angular/router';
 export class RegisterComponent extends userForm{
 
   public title!: string 
-
+  public registerFailed = signal(false);
 
 
   constructor(public userService: UserService, private router: Router){
@@ -31,6 +31,7 @@ export class RegisterComponent extends userForm{
 
   public register(){
     console.log("register");
+
     if (this.userForm.valid) {
       this.userService.showSpinner.set(true);
       const userInfo = this.userForm.value as IUserRegistration;
@@ -39,17 +40,18 @@ export class RegisterComponent extends userForm{
   
       this.userService.createUser(userInfo).pipe(
         delay(2000),
-        tap((response: IUserRegistration) =>{
-          console.log('Furniture created successfully:', response);
+        tap(() =>{
           this.router.navigateByUrl('/furnitures');
         }),
-        catchError((error: Error) => {
-          console.error('Error creating furniture:', error);
+        catchError((error) => {
+          this.registerFailed.set(true);
           return of();
         }),
         finalize(() =>{
           this.userService.showSpinner.set(false);
-          this.router.navigateByUrl('/furnitures');
+          if(!this.registerFailed()){
+            this.router.navigateByUrl('/furnitures');
+          }
         })
       ).subscribe();
      
