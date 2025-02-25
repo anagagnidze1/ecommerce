@@ -7,7 +7,6 @@ import { userRestService } from '../../core/services/user.rest.service';
   providedIn: 'root'
 })
 export class UserService {
-  public currentState = signal(this.currentState.LOGIN);
 
   constructor(private UsersRest: userRestService) {}
 

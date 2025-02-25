@@ -1,14 +1,4 @@
 <div class="main">
-    @switch(userService.currentState()){
-        @case(currentState.LOGIN){
-            <app-login/>
-        }
-        @case(currentState.REGISTER){
-            <app-register/>
-        }
-        @case(currentState.FURNITURE){
-            <app-furniture/>
-        }
-    }
+    <router-outlet/>
 </div>
 

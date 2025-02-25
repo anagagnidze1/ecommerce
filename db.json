@@ -1,7 +1,7 @@
 {
   "furniture": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Wooden Dining Table",
       "price": 299.99,
       "category": "Dining",
@@ -9,7 +9,7 @@
       "description": "A high-quality wooden dining table with six chairs."
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Sofa Set",
       "price": 1200,
       "category": "living room",
@@ -17,7 +17,7 @@
       "description": "A luxurious 3-piece sofa set for your living room."
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Dining Table",
       "price": 800,
       "category": "dining",
@@ -25,6 +25,190 @@
       "description": "A sturdy dining table made from high-quality wood."
     }
   ],
-  "users":[]
-
+  "users": [
+    {
+      "id": "a098",
+      "username": "afsa",
+      "firstName": "aff",
+      "lastName": "sdgfsgf",
+      "email": "sdgsd@sdfs",
+      "password": "Tkshd7832748923"
+    },
+    {
+      "id": "2146",
+      "username": "afsa",
+      "firstName": "aff",
+      "lastName": "sdgfsgf",
+      "email": "sdgsd@sdfs",
+      "password": "Tkshd7832748923"
+    },
+    {
+      "id": "f30e",
+      "username": "afsa",
+      "firstName": "aff",
+      "lastName": "sdgfsgf",
+      "email": "sdgsd@sdfs",
+      "password": "Tkshd7832748923"
+    },
+    {
+      "id": "2271",
+      "username": "afsa",
+      "firstName": "aff",
+      "lastName": "sdgfsgf",
+      "email": "sdgsd@sdfs",
+      "password": "Tkshd7832748923"
+    },
+    {
+      "id": "2ec3",
+      "username": "afsa",
+      "firstName": "aff",
+      "lastName": "sdgfsgf",
+      "email": "sdgsd@sdfs",
+      "password": "Tkshd7832748923"
+    },
+    {
+      "id": "791c",
+      "username": "afsa",
+      "firstName": "aff",
+      "lastName": "sdgfsgf",
+      "email": "sdgsd@sdfs",
+      "password": "Tkshd7832748923"
+    },
+    {
+      "id": "442b",
+      "username": "afsa",
+      "firstName": "aff",
+      "lastName": "sdgfsgf",
+      "email": "sdgsd@sdfs",
+      "password": "Tkshd7832748923"
+    },
+    {
+      "id": "dd6e",
+      "username": "afsa",
+      "firstName": "aff",
+      "lastName": "sdgfsgf",
+      "email": "sdgsd@sdfs",
+      "password": "Tkshd7832748923"
+    },
+    {
+      "id": "f56d",
+      "username": "afsa",
+      "firstName": "aff",
+      "lastName": "sdgfsgf",
+      "email": "sdgsd@sdfs",
+      "password": "Tkshd7832748923"
+    },
+    {
+      "id": "0720",
+      "username": "afsa",
+      "firstName": "aff",
+      "lastName": "sdgfsgf",
+      "email": "sdgsd@sdfs",
+      "password": "Tkshd7832748923"
+    },
+    {
+      "id": "030d",
+      "username": "afsa",
+      "firstName": "aff",
+      "lastName": "sdgfsgf",
+      "email": "sdgsd@sdfs",
+      "password": "Tkshd7832748923"
+    },
+    {
+      "id": "cbda",
+      "username": "afsa",
+      "firstName": "aff",
+      "lastName": "sdgfsgf",
+      "email": "sdgsd@sdfs",
+      "password": "Tkshd7832748923"
+    },
+    {
+      "id": "b12d",
+      "username": "afsa",
+      "firstName": "aff",
+      "lastName": "sdgfsgf",
+      "email": "sdgsd@sdfs",
+      "password": "Tkshd7832748923"
+    },
+    {
+      "id": "5c65",
+      "username": "afsa",
+      "firstName": "aff",
+      "lastName": "sdgfsgf",
+      "email": "sdgsd@sdfs",
+      "password": "Tkshd7832748923"
+    },
+    {
+      "id": "c660",
+      "username": "afsa",
+      "firstName": "aff",
+      "lastName": "sdgfsgf",
+      "email": "sdgsd@sdfs",
+      "password": "Tkshd7832748923"
+    },
+    {
+      "id": "2811",
+      "username": "afsa",
+      "firstName": "aff",
+      "lastName": "sdgfsgf",
+      "email": "sdgsd@sdfs",
+      "password": "Tkshd7832748923"
+    },
+    {
+      "id": "bc9c",
+      "username": "afsa",
+      "firstName": "aff",
+      "lastName": "sdgfsgf",
+      "email": "sdgsd@sdfs",
+      "password": "Tkshd7832748923"
+    },
+    {
+      "id": "cc53",
+      "username": "afsa",
+      "firstName": "aff",
+      "lastName": "sdgfsgf",
+      "email": "sdgsd@sdfs",
+      "password": "Tkshd7832748923"
+    },
+    {
+      "id": "b41b",
+      "username": "afsa",
+      "firstName": "aff",
+      "lastName": "sdgfsgf",
+      "email": "sdgsd@sdfs",
+      "password": "Tkshd7832748923"
+    },
+    {
+      "id": "4d0d",
+      "username": "afsa",
+      "firstName": "aff",
+      "lastName": "sdgfsgf",
+      "email": "sdgsd@sdfs",
+      "password": "Tkshd7832748923"
+    },
+    {
+      "id": "11c7",
+      "username": "afsa",
+      "firstName": "aff",
+      "lastName": "sdgfsgf",
+      "email": "sdgsd@sdfs",
+      "password": "Tkshd7832748923"
+    },
+    {
+      "id": "6caf",
+      "username": "fsgd",
+      "firstName": "dfgdf",
+      "lastName": "gdfgdf",
+      "email": "fdgd@sgdg",
+      "password": "Ysjhf8375923"
+    },
+    {
+      "id": "f9fa",
+      "username": "awa",
+      "firstName": "arfse",
+      "lastName": "raerfar",
+      "email": "erse@sadfsa",
+      "password": "Tsjfn83424y2"
+    }
+  ]
 }

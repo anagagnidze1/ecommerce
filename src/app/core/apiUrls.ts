@@ -1,6 +1,6 @@
-const baseUrl = 'http://localhost:3000/furniture';
+const baseUrl = 'http://localhost:3000';
 export const apiUrls = {
-    furniture: `${baseUrl}`,
-    users: 'http://localhost:3000/users'
+    furniture: `${baseUrl}/furniture`,
+    users: `${baseUrl}/users`
 
 };

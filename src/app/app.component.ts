@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import { currentState } from './shared/enums/enums';
 import { FurnitureComponent } from './furniture/furniture/furniture.component';
-import { UserService } from './user.service';
+import { UserService } from './shared/services/user.service';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [LoginComponent, RegisterComponent, FurnitureComponent],
+  imports: [RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -16,7 +16,6 @@ export class AppComponent {
 
   public loginPage = true;
 
-  public currentState = currentState;
 
   constructor(public userService: UserService){
     console.log("app component innited")

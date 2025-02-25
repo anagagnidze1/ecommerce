@@ -2,8 +2,8 @@ import { Component} from '@angular/core';
 import { LoginRegister } from '../login-register-form/login-register.abstract-class';
 import { FormsModule } from '@angular/forms';
 import { Subject } from 'rxjs';
-import { UserService } from '../shared/services/furniture.service';
-import { currentState } from '../shared/enums/enums';
+import { UserService } from '../shared/services/user.service';
+import { Router } from '@angular/router';
 
 interface IUser{
   username: string,
@@ -14,7 +14,8 @@ interface IUser{
   selector: 'app-login',
   imports: [FormsModule],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.scss'
+  styleUrl: './login.component.scss',
+  standalone: true
 })
 export class LoginComponent extends LoginRegister{
 
@@ -23,7 +24,7 @@ export class LoginComponent extends LoginRegister{
   public username!: string
   public password!: string
 
-  constructor(public userService: UserService){
+  constructor(public userService: UserService, private router: Router){
     super()
 
     this.mySubj.subscribe((value) => {
@@ -32,13 +33,11 @@ export class LoginComponent extends LoginRegister{
 
   }
   public login(){
-    console.log("Before:", this.userService.currentState());
-    this.userService.currentState.set(currentState.FURNITURE);
-    console.log("After:", this.userService.currentState());
+    this.router.navigateByUrl('/furnitures');
 
   }
   public register(){
-    this.userService.currentState.set(currentState.REGISTER);
+    this.router.navigateByUrl('/register');
   }
 
 }
