@@ -1,4 +1,4 @@
-import { Injectable, signal } from '@angular/core';
+import { Injectable, signal} from '@angular/core';
 import { Observable } from 'rxjs';
 import { IUserRegistration } from '../interface/users';
 import { userRestService } from '../../core/services/user.rest.service';
@@ -8,6 +8,8 @@ import { userRestService } from '../../core/services/user.rest.service';
 })
 export class UserService {
 
+  public showSpinner = signal(false);
+  
   constructor(private UsersRest: userRestService) {}
 
   public getUser(): Observable<IUserRegistration[]> {

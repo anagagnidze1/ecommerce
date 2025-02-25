@@ -5,7 +5,7 @@ import { NgClass } from '@angular/common';
 import { userForm } from '../shared/user-form/user-form.class';
 import { IUserRegistration} from '../shared/interface/users';
 import { UserService } from '../shared/services/user.service';
-import { catchError, of, tap } from 'rxjs';
+import { catchError, delay, finalize, of, tap } from 'rxjs';
 import { Router } from '@angular/router';
 
 
@@ -32,11 +32,13 @@ export class RegisterComponent extends userForm{
   public register(){
     console.log("register");
     if (this.userForm.valid) {
+      this.userService.showSpinner.set(true);
       const userInfo = this.userForm.value as IUserRegistration;
       
       console.log('User info:', userInfo);
-
+  
       this.userService.createUser(userInfo).pipe(
+        delay(2000),
         tap((response: IUserRegistration) =>{
           console.log('Furniture created successfully:', response);
           this.router.navigateByUrl('/furnitures');
@@ -44,8 +46,13 @@ export class RegisterComponent extends userForm{
         catchError((error: Error) => {
           console.error('Error creating furniture:', error);
           return of();
+        }),
+        finalize(() =>{
+          this.userService.showSpinner.set(false);
+          this.router.navigateByUrl('/furnitures');
         })
       ).subscribe();
+     
     } else {
       console.log('Form is invalid');
     }
