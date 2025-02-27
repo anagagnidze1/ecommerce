@@ -20,7 +20,7 @@ export class furnitureService {
   }
   public getFurnitureById(id: number | string): Observable<IFurniture | null> {
     return this.getFurniture().pipe(
-      map(furnitures => furnitures.find(furniture => furniture.id == id) || null) // Use == instead of ===
+      map(furnitures => furnitures.find(furniture => furniture.id == id) || null)
     );
   }
   

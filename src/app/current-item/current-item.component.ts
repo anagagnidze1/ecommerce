@@ -1,7 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import { IFurniture } from '../shared/interface/interfaces';
 import { furnitureService } from '../shared/services/furniture.service';
-import { BehaviorSubject } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -17,12 +16,12 @@ export class CurrentItemComponent implements OnInit{
   constructor(private furnitureService: furnitureService, private router: Router,  private route: ActivatedRoute){}
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
-      const id = params.get('id'); // Don't convert to number yet
+      const id = params.get('id');
       if (id) {
         this.furnitureService.getFurnitureById(id).subscribe(item => {
-          this.furnitureService.currentItem.set(item); // Update the signal
-          this.currentItem = this.furnitureService.currentItem(); // Read the signal value
-          console.log("Selected item:", this.currentItem); // Debugging log
+          this.furnitureService.currentItem.set(item);
+          this.currentItem = this.furnitureService.currentItem();
+          console.log("Selected item:", this.currentItem);
         });
       } else {
         console.error('Invalid furniture ID');
