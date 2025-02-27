@@ -10,7 +10,6 @@ export class UserService {
 
   public showSpinner = signal(false);
   public loggedUser = signal<IUserRegistration | null>(null);
-
   constructor(private UsersRest: userRestService) {}
 
   public getUser(): Observable<IUserRegistration[]> {
