@@ -1,0 +1,11 @@
+<h1>cart</h1>
+
+@for(furniture of cartService.getCartItems(); track furniture.id){
+    <div>
+        <img [src]="furniture.image" alt="{{ furniture.name }}" width="200">
+        <h2>{{ furniture.name }}</h2>
+        <p>Price: ${{ furniture.price }}</p>   
+        <button (click) = "deleteFromCart(furniture)">Delete</button>
+    </div>
+}
+

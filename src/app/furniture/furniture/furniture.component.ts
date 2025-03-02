@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { BehaviorSubject, catchError, of, Subject, takeUntil, tap } from 'rxjs';
 import { IFurniture } from '../../shared/interface/interfaces';
 import { furnitureService } from '../../shared/services/furniture.service';
 import { AsyncPipe } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
+import { CartService } from '../../shared/services/cart.service';
 
 
 
@@ -19,6 +20,8 @@ export class FurnitureComponent implements OnInit {
   private destroy$ = new Subject<void>();
   public furniture$ = new BehaviorSubject<IFurniture[]>([]);
 
+  CartService = inject(CartService)
+
   constructor(public furnitureService: furnitureService, private router: Router, private route: ActivatedRoute) {
 
     console.log("FurnitureComponent initialized!");
@@ -32,6 +35,10 @@ export class FurnitureComponent implements OnInit {
 
   viewItem(id: number): void{
     this.router.navigate(['/current-item', id]);
+  }
+  addToCart(furniture: IFurniture){
+    this.CartService.addToCart(furniture);
+    this.router.navigate(['/cart']);
   }
 
 

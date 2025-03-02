@@ -26,11 +26,11 @@
     <div class="container">
         @for (furniture of furniture$ | async; track $index){
             <div (click)="viewItem(furniture.id ?? 0)" class="item">
+                <img [src]="furniture.image" alt="{{ furniture.name }}" width="200">
                 <h2>{{ furniture.name }}</h2>
                 <p>Price: ${{ furniture.price }}</p>
-                <p>Category: {{ furniture.category }}</p>
-                <img [src]="furniture.image" alt="{{ furniture.name }}" width="200">
-                <p>{{ furniture.description }}</p>
+                <button (click) = "addToCart(furniture); $event.stopPropagation()">Add To Cart</button>
+
             </div>
         }
     </div>

@@ -41,6 +41,12 @@ export const routes: Routes = [
 
     },
     {
+        title: 'cart',
+        path: 'cart',
+        loadComponent: () => import('./cart/cart.component').then(c => c.CartComponent),
+
+    },
+    {
         path: '**',
         loadComponent: () => import('./shared/page-not-found/page-not-found.component').then(c => c.PageNotFoundComponent) 
     }
