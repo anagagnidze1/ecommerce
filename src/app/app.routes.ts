@@ -1,8 +1,7 @@
 import { Routes } from '@angular/router';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
-import { FurnitureComponent } from './furniture/furniture/furniture.component';
-import { CurrentItemComponent } from './current-item/current-item.component';
+import { userLoggedGuard } from './core/guards/user-logged.guard';
+import { usersResolver } from './core/resolvers/users.resolver';
+import { of } from 'rxjs';
 
 export const routes: Routes = [
     {
@@ -13,21 +12,37 @@ export const routes: Routes = [
     {
         title: 'Login',
         path: 'login',
-        component: LoginComponent
+        loadComponent: () => import('./login/login.component').then(c => c.LoginComponent) 
     },
     {
         title: 'Register',
         path: 'register',
-        component: RegisterComponent
+        loadComponent: () => import('./register/register.component').then(c => c.RegisterComponent) 
     },
     {
         title:'furnitures',
         path:'furnitures',
-        component: FurnitureComponent
+        loadComponent: () => import('./furniture/furniture/furniture.component').then(c => c.FurnitureComponent),
+        canActivate: [userLoggedGuard],
+        resolve: {
+            furnitures: usersResolver,
+        },
+        data:{
+            list: [1,2,3],
+
+        }
+
     },
     {
         title: 'current-item',
         path: 'current-item/:id',
-        component: CurrentItemComponent
+        loadComponent: () => import('./current-item/current-item.component').then(c => c.CurrentItemComponent),
+        canActivate: [userLoggedGuard]
+
+    },
+    {
+        path: '**',
+        loadComponent: () => import('./shared/page-not-found/page-not-found.component').then(c => c.PageNotFoundComponent) 
     }
+
 ];

@@ -18,10 +18,8 @@ export class furnitureService {
   public createFurniture(furniture: IFurniture): Observable<IFurniture> {
     return this.furnitureRest.createFurniture(furniture);
   }
-  public getFurnitureById(id: number | string): Observable<IFurniture | null> {
-    return this.getFurniture().pipe(
-      map(furnitures => furnitures.find(furniture => furniture.id == id) || null)
-    );
+  public getFurnitureById(id: string): Observable<IFurniture | null> {
+    return this.furnitureRest.getFurnitureById(id);
   }
   
 

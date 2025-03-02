@@ -1,11 +1,70 @@
-.mainimg{
+.imgcont {
   width: 100%;
-  height: auto;
-}
-h1{
-    color: white;
+  height: 700px;
+  position: relative;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 50px;
+
+
+    ul {
+      display: flex;
+      gap: 80px;
+      list-style: none;
+      align-items: center;
+
+      .web-name {
+        padding-right: 200px;
+        font-size: 30px;
+      }
+
+      li {
+        a {
+          text-decoration: none;
+          color: black;
+          font-weight: bold;
+
+
+        }
+
+        a:hover {
+          color: gray;
+        }
+      }
+      .login-register{
+        display: flex;
+        margin-left: 100px;
+        gap: 20px;
+      }
+    }
+  }
+  h1{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
+    font-size: 50px;
+    color: black;
+    padding: 20px;
+    font-family: playfairdisplay;
+
+  }
 }
+
+
 .container{
     display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 

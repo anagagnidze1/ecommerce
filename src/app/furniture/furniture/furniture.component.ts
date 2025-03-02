@@ -3,7 +3,7 @@ import { BehaviorSubject, catchError, of, Subject, takeUntil, tap } from 'rxjs';
 import { IFurniture } from '../../shared/interface/interfaces';
 import { furnitureService } from '../../shared/services/furniture.service';
 import { AsyncPipe } from '@angular/common';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 
@@ -19,13 +19,15 @@ export class FurnitureComponent implements OnInit {
   private destroy$ = new Subject<void>();
   public furniture$ = new BehaviorSubject<IFurniture[]>([]);
 
-  constructor(public furnitureService: furnitureService, private router: Router) {
+  constructor(public furnitureService: furnitureService, private router: Router, private route: ActivatedRoute) {
 
     console.log("FurnitureComponent initialized!");
     
   }
   public ngOnInit() {
-    this.getFurniture();
+    console.log('active route:' , this.route)
+    this.furniture$.next(this.route.snapshot.data['furnitures'])
+    // this.getFurniture();
   }
 
   viewItem(id: number): void{

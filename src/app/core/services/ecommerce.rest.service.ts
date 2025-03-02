@@ -13,7 +13,7 @@ export class EcommerceRestService{
     public getFurniture(): Observable<IFurniture[]>{
         return this.http.get<IFurniture[]>(apiUrls.furniture);
     }
-    public getFurnitureById(id: number): Observable<IFurniture>{
+    public getFurnitureById(id: string): Observable<IFurniture>{
         return this.http.get<IFurniture>(`${apiUrls.furniture}/${id}`);
     }
     public createFurniture(furniture: IFurniture): Observable<IFurniture> {

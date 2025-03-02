@@ -1,5 +1,28 @@
 <div>
-    <!-- <h1>Discover The Best Furniture For You</h1> -->
+    <div class="imgcont">
+        <img src="https://images.unsplash.com/photo-1540574163026-643ea20ade25?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="#" class="web-name">DeHome</a></li>
+                    <li><a href="#" class="">Home</a></li>
+                    <li><a href="#" class="">Category</a></li>
+                    <li><a href="#" class="">About</a></li>
+                    <li><a href="#" class="">Cart</a></li>
+                    <div class="login-register">
+                        <li><a href="#" class="">login</a></li>
+                        <li><a href="#" class="">register</a></li>
+                    </div>
+                </ul>
+            </nav>
+        </header>
+        <h1>
+            Design your dream home with the perfect furniture
+        </h1>
+    </div>
+    <h1>
+        Discover Unparalleled Furniture Designs 
+    </h1>
     <div class="container">
         @for (furniture of furniture$ | async; track $index){
             <div (click)="viewItem(furniture.id ?? 0)" class="item">
