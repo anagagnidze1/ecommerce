@@ -3,44 +3,47 @@ import { BehaviorSubject, catchError, of, Subject, takeUntil, tap } from 'rxjs';
 import { IFurniture } from '../../shared/interface/interfaces';
 import { furnitureService } from '../../shared/services/furniture.service';
 import { AsyncPipe } from '@angular/common';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { CartService } from '../../shared/services/cart.service';
-
-
 
 @Component({
   selector: 'app-furniture',
-  imports: [AsyncPipe],
+  imports: [AsyncPipe, RouterLink],
   templateUrl: './furniture.component.html',
   styleUrl: './furniture.component.scss',
-  standalone: true
+  standalone: true,
 })
 export class FurnitureComponent implements OnInit {
-  public users = new BehaviorSubject<IFurniture[]>([])
+  public users = new BehaviorSubject<IFurniture[]>([]);
   private destroy$ = new Subject<void>();
   public furniture$ = new BehaviorSubject<IFurniture[]>([]);
-  CartService = inject(CartService)
 
-  constructor(public furnitureService: furnitureService, private router: Router, private route: ActivatedRoute) {
-
-    console.log("FurnitureComponent initialized!");
-    
+  constructor(
+    public furnitureService: furnitureService,
+    public cartService: CartService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {
+    console.log('FurnitureComponent initialized!');
   }
   public ngOnInit() {
-    console.log('active route:' , this.route)
-    this.furniture$.next(this.route.snapshot.data['furnitures'])
+    console.log('active route:', this.route);
+    this.furniture$.next(this.route.snapshot.data['furnitures']);
     // this.getFurniture();
   }
 
-  viewItem(id: number): void{
+  viewItem(id: number): void {
     this.router.navigate(['/current-item', id]);
   }
-  addToCart(furniture: IFurniture){
-    this.CartService.addToCart(furniture);
-    this.router.navigate(['/cart']);
+  addToCart(furniture: IFurniture) {
+    this.cartService.addToCart(furniture);
   }
 
-  public getFurniture(): void{
+  delete(furniture: IFurniture) {
+    this.cartService.delete(furniture);
+  }
+
+  public getFurniture(): void {
     this.furnitureService
       .getFurniture()
       .pipe(
@@ -54,6 +57,6 @@ export class FurnitureComponent implements OnInit {
           this.furniture$.next(furniture);
         })
       )
-    .subscribe();
+      .subscribe();
   }
 }
