@@ -1,0 +1,51 @@
+.background {
+    background-color: white;
+    height: 100%;
+    width: 100%;
+    padding: 20px; 
+    box-sizing: border-box;
+}
+
+.headline{
+    text-align: center;
+    font-family: playfairdisplay;
+
+}
+.cart-item {
+    display: flex;
+    align-items: center; 
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover{
+        transform: scale(1.02); 
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    }
+}
+
+.item-image {
+
+    height: 200px;
+    margin-right: 15px; 
+}
+
+.item-details {
+    flex-grow: 1; 
+}
+
+.delete-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background-color: darkred;
+}

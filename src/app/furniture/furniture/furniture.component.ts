@@ -19,7 +19,6 @@ export class FurnitureComponent implements OnInit {
   public users = new BehaviorSubject<IFurniture[]>([])
   private destroy$ = new Subject<void>();
   public furniture$ = new BehaviorSubject<IFurniture[]>([]);
-
   CartService = inject(CartService)
 
   constructor(public furnitureService: furnitureService, private router: Router, private route: ActivatedRoute) {
@@ -40,7 +39,6 @@ export class FurnitureComponent implements OnInit {
     this.CartService.addToCart(furniture);
     this.router.navigate(['/cart']);
   }
-
 
   public getFurniture(): void{
     this.furnitureService

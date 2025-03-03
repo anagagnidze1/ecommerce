@@ -35,4 +35,5 @@ export class CurrentItemComponent implements OnInit{
       console.error('Furniture ID is undefined!');
     }
   }
+
 }

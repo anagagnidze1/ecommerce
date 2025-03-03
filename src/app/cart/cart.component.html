@@ -1,11 +1,15 @@
-<h1>cart</h1>
+<div class="background">
+    <h1 class="headline">cart</h1>
+    @for(furniture of cartService.getCartItems(); track furniture.id){
+        <div class="cart-item">
+            <img [src]="furniture.image" alt="{{ furniture.name }}" class="item-image">
+            <div class="item-details">
+                <h2>{{ furniture.name }}</h2>
+                <p>Price: ${{ furniture.price }}</p>
+            </div>
+            <button (click)="deleteFromCart(furniture)" class="delete-btn">Delete</button>
+        </div>
+    }
+</div>
 
-@for(furniture of cartService.getCartItems(); track furniture.id){
-    <div>
-        <img [src]="furniture.image" alt="{{ furniture.name }}" width="200">
-        <h2>{{ furniture.name }}</h2>
-        <p>Price: ${{ furniture.price }}</p>   
-        <button (click) = "deleteFromCart(furniture)">Delete</button>
-    </div>
-}
 

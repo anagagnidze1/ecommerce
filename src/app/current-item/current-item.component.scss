@@ -1,21 +1,28 @@
+.background{
+    background-color: #e2c4a1;
+}
 .item-container{
     display: flex;
     padding: 50px;
+
     .img-section{
         width: 50%;
     
         img{
             width: 80%;
+            border-radius: 30px;
+
         }
     }
     .information{
         padding: 30px;
         align-items: center;
         justify-content: center;
-        color: white;
-
+        color: black;
+        padding-top: 150px;
+        width: 50%;
         button {
-            background-color: #ff6600;
+            background-color: #7B560C;
             color: white;
             border: none;
             padding: 12px 20px;
@@ -26,9 +33,13 @@
             transition: 0.3s ease-in-out;
             
             &:hover {
-                background-color: #e65c00;
+                background-color: #997938;
                 transform: scale(1.05);
             }
+        }
+        h2{
+            font-family: playfairdisplay;
+
         }
     }
 }

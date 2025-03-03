@@ -2,28 +2,70 @@
   "furniture": [
     {
       "id": "1",
-      "name": "Wooden Dining Table",
+      "name": "ArmChair",
       "price": 299.99,
-      "category": "Dining",
-      "image": "https://www.urbanbarn.com/dw/image/v2/BCKH_PRD/on/demandware.static/-/Sites-masterCatalog_Urban_Barn/default/dwf7783d65/images/original/222357-lifestyle.jpg?sw=1490&sh=1060&q=70",
-      "description": "A high-quality wooden dining table with six chairs."
+      "category": "Living Room",
+      "image": "https://images.unsplash.com/photo-1579656592043-a20e25a4aa4b?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "description": "Elevate your space with a beautifully crafted wooden armchair, blending timeless elegance with modern comfort. Designed with sturdy wood and sleek armrests, it offers both durability and style, making it a perfect addition to any living area or workspace."
     },
     {
       "id": "2",
       "name": "Sofa Set",
       "price": 1200,
       "category": "living room",
-      "image": "https://www.duraster.com/cdn/shop/products/ummed-wooden-sofa-set_d82c60c0-07bf-4f66-86e2-8fe642e54ecc.jpg?v=1645421542",
-      "description": "A luxurious 3-piece sofa set for your living room."
+      "image": "https://plus.unsplash.com/premium_photo-1676321046535-848a104819ca?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "description": "Experience ultimate comfort with our stylish and durable sofa, designed to enhance any living space. Featuring plush cushions, premium upholstery, and a sturdy frame, it offers the perfect blend of relaxation and elegance for your home."
     },
     {
       "id": "3",
       "name": "Dining Table",
       "price": 800,
       "category": "dining",
-      "image": "https://www.tiptoe.fr/wp-content/uploads/2021/03/09_TIPTOE-PAPOTTE-300010-1_JMauloubier-WEB.jpg?twic=v1/output=preview",
-      "description": "A sturdy dining table made from high-quality wood."
+      "image": "https://images.unsplash.com/photo-1606660023296-81d67734170a?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "description": "Enhance your dining experience with a beautifully crafted dining table, combining elegance and durability. Designed with high-quality wood and a sturdy frame, it provides the perfect centerpiece for family meals and gatherings."
+    },
+    {
+      "id": "4",
+      "name": "Bed",
+      "price": 800,
+      "category": "Bedroom",
+      "image": "https://images.unsplash.com/photo-1552858725-a19e7fcd3ac4?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "description": "Transform your bedroom into a cozy retreat with our elegantly designed bed, crafted for comfort and durability. Featuring a sturdy wooden frame and a sleek finish, it adds warmth and style to any space. The ergonomic design ensures restful sleep, while the high-quality materials offer long-lasting support. Perfect for creating a relaxing and inviting atmosphere in your home."
+    },
+    {
+      "id": "5",
+      "name": "Sofa Set",
+      "price": 1200,
+      "category": "living room",
+      "image": "https://images.unsplash.com/photo-1564078516393-cf04bd966897?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "description": "Experience ultimate comfort with our stylish and durable sofa, designed to enhance any living space. Featuring plush cushions, premium upholstery, and a sturdy frame, it offers the perfect blend of relaxation and elegance for your home."
+    },
+    {
+      "id": "6",
+      "name": "sofa",
+      "price": 800,
+      "category": "living room",
+      "image": "https://images.unsplash.com/photo-1604061986761-d9d0cc41b0d1?q=80&w=1372&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "description": "Upgrade your living space with a stylish and comfortable sofa, designed for both relaxation and elegance. Featuring plush seating, premium upholstery, and a sturdy frame, it offers the perfect blend of support and coziness. Its sleek design makes it a versatile addition to any modern or classic interior."
+    },
+    {
+      "id": "7",
+      "name": "sofa",
+      "price": 800,
+      "category": "Living room",
+      "image": "https://images.unsplash.com/photo-1599696848652-f0ff23bc911f?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "description": "Upgrade your living space with a stylish and comfortable sofa, designed for both relaxation and elegance. Featuring plush seating, premium upholstery, and a sturdy frame, it offers the perfect blend of support and coziness. Its sleek design makes it a versatile addition to any modern or classic interior."
+    },
+    {
+      "id": "8",
+      "name": "Chandelier",
+      "price": 800,
+      "category": "living room",
+      "image": "https://images.unsplash.com/photo-1540932239986-30128078f3c5?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "description": "Elevate your space with our stunning chandelier collection. Crafted with intricate detail, these elegant light fixtures combine style and function. Perfect for dining rooms, living spaces, or entryways, they add a touch of luxury to any room. Illuminate your home with timeless sophistication and modern charm."
     }
+
+
   ],
   "users": [
     {

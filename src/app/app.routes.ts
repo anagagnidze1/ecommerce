@@ -1,7 +1,6 @@
 import { Routes } from '@angular/router';
 import { userLoggedGuard } from './core/guards/user-logged.guard';
 import { usersResolver } from './core/resolvers/users.resolver';
-import { of } from 'rxjs';
 
 export const routes: Routes = [
     {
