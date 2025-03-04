@@ -12,7 +12,7 @@ export class CartService {
   }
 
   addToCart(furniture: IFurniture) {
-    this.items.push(furniture);
+    this.items.push({...furniture, quantity: 1});
     localStorage.setItem('items', JSON.stringify(this.items));
   }
   getCartItems(): IFurniture[] {
@@ -25,5 +25,27 @@ export class CartService {
 
   checkIfFurnitureIsAddedToCart(furniture: IFurniture): boolean {
     return !!this.items.find((furn) => furn.id === furniture.id);
+  }
+
+  incrementQuantity(id: number){
+    let item = this.items.find((i) => i.id === id)
+    if (item) {
+      item.quantity = (item.quantity ?? 0) + 1;
+      localStorage.setItem('items', JSON.stringify(this.items)); // Ensure the updated quantity is saved
+    }
+  }
+  decrementQuantity(id:number){
+    let item = this.items.find((i) => i.id === id);
+    if (item && item.quantity && item.quantity > 1) {
+      item.quantity--;
+    } else {
+      this.items = this.items.filter((i) => i.id !== id);
+    }
+    localStorage.setItem('items', JSON.stringify(this.items));
+  }
+  getTotal(){
+    return this.items.reduce((acc, item) => {
+      return acc + item.price * (item.quantity ?? 1);
+    }, 0);
   }
 }

@@ -25,6 +25,57 @@
         transform: scale(1.02); 
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
     }
+    .quantity-controls {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .qty-btn {
+        background: #007bff;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        font-size: 18px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.3s;
+
+        &:hover {
+            background: #0056b3;
+        }
+    }
+    .quantity {
+        font-size: 16px;
+        font-weight: bold;
+        color: #333;
+    }
+    .delete-btn {
+        background: #dc3545;
+        color: white;
+        border: none;
+        padding: 8px 12px;
+        font-size: 14px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.3s;
+
+        &:hover {
+            background: #b02a37;
+        }
+    }
+    
+
+    
+
+}
+.total-section {
+    text-align: right;
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px;
+    background: #e9ecef;
+    border-radius: 8px;
 }
 
 .item-image {

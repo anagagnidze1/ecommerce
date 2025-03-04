@@ -7,9 +7,18 @@
                 <h2>{{ furniture.name }}</h2>
                 <p>Price: ${{ furniture.price }}</p>
             </div>
-            <button (click)="deleteFromCart(furniture)" class="delete-btn">Delete</button>
+            <div class="quantity-controls">
+                <button class="qty-btn" (click)="cartService.decrementQuantity(furniture.id)">−</button>
+                <span class="quantity">{{ furniture.quantity }}</span>
+                <button class="qty-btn" (click)="cartService.incrementQuantity(furniture.id)">+</button>
+            </div>
+            <button (click)="deleteFromCart(furniture)" class="delete-btn">Remove</button>
         </div>
     }
+    <div class="total-section">
+        <h2>Total: ${{ cartService.getTotal() }}</h2>
+    </div>
+
 </div>
 
 

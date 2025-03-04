@@ -12,7 +12,11 @@
           <li><a href="#" class="">Category</a></li>
           <li><a href="#" class="">About</a></li>
           <li><a routerLink="/cart">Cart</a></li>
-          <div class="login-register"></div>
+          <div class="login-register">
+            <img src="https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png" alt="">
+            <img src="https://static-00.iconduck.com/assets.00/log-out-icon-2048x2048-cru8zabe.png" alt="">
+          </div>
+  
         </ul>
       </nav>
     </header>
@@ -21,28 +25,28 @@
   <h1 class="headline">Discover Unparalleled Furniture Designs</h1>
   <div class="container">
     @for (furniture of furniture$ | async; track $index){
-    <div (click)="viewItem(furniture.id ?? 0)" class="item">
-      <img [src]="furniture.image" alt="{{ furniture.name }}" width="200" />
-      <p class="name">{{ furniture.name }}</p>
-      <div class="price-cart">
-        <p class="price">Price: ${{ furniture.price }}</p>
-        @if (cartService.checkIfFurnitureIsAddedToCart(furniture)) {
-        <button
-          class="cart"
-          (click)="delete(furniture); $event.stopPropagation()"
-        >
-          Delete From Cart
-        </button>
-        } @else {
-        <button
-          class="cart"
-          (click)="addToCart(furniture); $event.stopPropagation()"
-        >
-          Add To Cart
-        </button>
-        }
+      <div (click)="viewItem(furniture.id)" class="item">
+        <img [src]="furniture.image" alt="{{ furniture.name }}" width="200" />
+        <p class="name">{{ furniture.name }}</p>
+        <div class="price-cart">
+          <p class="price">Price: ${{ furniture.price }}</p>
+          @if (cartService.checkIfFurnitureIsAddedToCart(furniture)) {
+          <button
+            class="cart"
+            (click)="delete(furniture); $event.stopPropagation()"
+          >
+            Delete From Cart
+          </button>
+          } @else {
+          <button
+            class="cart"
+            (click)="addToCart(furniture); $event.stopPropagation()"
+          >
+            Add To Cart
+          </button>
+          }
+        </div>
       </div>
-    </div>
     }
   </div>
   <div class="imgcont2">

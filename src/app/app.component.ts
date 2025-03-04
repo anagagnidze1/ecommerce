@@ -1,7 +1,4 @@
 import { Component } from '@angular/core';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
-import { FurnitureComponent } from './furniture/furniture/furniture.component';
 import { UserService } from './shared/services/user.service';
 import { RouterOutlet } from '@angular/router';
 
