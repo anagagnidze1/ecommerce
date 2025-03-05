@@ -1,0 +1,38 @@
+.form-section{
+    background-color: rgba(17, 24, 34, 1);
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+
+    form{
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        border-radius: 10px;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        
+        h1{
+            color: white;
+        }
+
+        label {
+            text-align: left;
+            font-size: 14px;
+        }
+
+        input {
+            width: 50%;
+            padding: 12px;
+            background:#4D5259;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            outline: none;
+        }
+    }
+}

@@ -10,11 +10,11 @@
           <li><a href="#" class="web-name">DeHome</a></li>
           <li><a href="#" class="">Home</a></li>
           <li><a href="#" class="">Category</a></li>
-          <li><a href="#" class="">About</a></li>
+          <li><a class="">About</a></li>
           <li><a routerLink="/cart">Cart</a></li>
           <div class="login-register">
-            <img src="https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png" alt="">
-            <img src="https://static-00.iconduck.com/assets.00/log-out-icon-2048x2048-cru8zabe.png" alt="">
+            <img (click)= "goToUserInfo()" src="https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png" alt="">
+            <img (click)="logout()" src="https://static-00.iconduck.com/assets.00/log-out-icon-2048x2048-cru8zabe.png" alt="">
           </div>
   
         </ul>
@@ -88,5 +88,52 @@
             <button>Explore</button>
         </div>
     </div>
-</div>
+  </div>
+
+  <div class="about-us-cont">
+    <img src="https://images.unsplash.com/photo-1606744824163-985d376605aa?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+    <div class="about-us">
+      <h2>About Us</h2>
+      <p>Lorem ipsum dolor sit amet consectetur. Quis consequat sed malesuada cras dictum fermentum turpis.</p>
+      <button>Contact Us</button>
+  </div>
+  <footer>
+    <div class="footer-content">
+        <h3>Comfort Craft</h3>
+        <p>Design amazing digital experiences that create more happy in the world.</p>
+        <div class="links">
+            <div class="shop">
+                <h4>Shop</h4>
+                <ul>
+                    <li>Modern Chair</li>
+                    <li>Modern Sofas</li>
+                    <li>Marble Chairs</li>
+                    <li>Wooden</li>
+                    <li>Discounts</li>
+                </ul>
+            </div>
+            <div class="company">
+                <h4>Company</h4>
+                <ul>
+                    <li>About Us</li>
+                    <li>Careers</li>
+                    <li>Investors</li>
+                    <li>News</li>
+                    <li>Purpose</li>
+                </ul>
+            </div>
+            <div class="support">
+                <h4>Support</h4>
+                <ul>
+                    <li>Order Status</li>
+                    <li>Shipping & Delivery</li>
+                    <li>Returns</li>
+                    <li>Payment Option</li>
+                    <li>Contact</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+  </footer>
+
 </div>

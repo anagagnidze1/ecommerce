@@ -52,10 +52,18 @@ export const routes: Routes = [
     canActivate: [userLoggedGuard],
   },
   {
+    title: 'user-info',
+    path: 'user-info',
+    loadComponent: () =>
+      import('./user-info/user-info.component').then((c) => c.UserInfoComponent),
+
+  },
+  {
     path: '**',
     loadComponent: () =>
       import('./shared/page-not-found/page-not-found.component').then(
         (c) => c.PageNotFoundComponent
       ),
   },
+
 ];

@@ -1,0 +1,69 @@
+<div class="form-section">
+    <form [formGroup] = "userForm">
+      <input 
+       [ngClass]="{
+          'input-error': usernameControl.touched && usernameControl.invalid
+        }" formControlName = "username" type="text" id="username" placeholder="Username">
+      @if(usernameControl.touched && usernameControl.hasError('required')){
+          <app-error message = "This field is required"></app-error>
+      } @else if (usernameControl.touched && usernameControl.hasError('minlength')) {
+      <app-error message="Username must contain min ">
+        {{usernameControl.errors?.['minlength'].requiredLength}}
+      </app-error>
+      } @else if (usernameControl.touched && usernameControl.hasError('onlyLathinLetters')) {
+      <app-error message="Only latin numbers "> </app-error>
+      }
+      <input
+        [ngClass]="{
+          'input-error': firstNameControl.touched && firstNameControl.invalid
+        }" formControlName = "firstName" type="text" id="FirstName" placeholder="First Name">
+        @if (firstNameControl.touched && firstNameControl.hasError('required')) {
+          <app-error message="This field is required"></app-error>
+          } @else if (firstNameControl.touched &&
+          firstNameControl.hasError('minlength')) {
+          <app-error
+            [message]="'First name must contain min ' + firstNameControl.errors?.['minlength'].requiredLength"
+          />
+        }
+      <input
+        [ngClass]="{
+          'input-error': lastNameControl.touched && lastNameControl.invalid
+        }" formControlName = "lastName" type="text" id="LastName" placeholder="Last Name">
+        @if (lastNameControl.touched && lastNameControl.hasError('required')) {
+          <app-error message="This field is required"></app-error>
+          } @else if (lastNameControl.touched &&
+          lastNameControl.hasError('minlength')) {
+          <app-error
+            [message]="'Last name must contain min ' + lastNameControl.errors?.['minlength'].requiredLength"
+          />
+        }
+      <input 
+        [ngClass]="{
+          'input-error': emailControl.touched && emailControl.invalid
+        }" formControlName = "email" type="email" id="Email" placeholder="Email">
+        @if (emailControl.touched && emailControl.hasError('required')) {
+          <app-error message="This field is required"></app-error>
+        }
+      <input 
+        [ngClass]="{
+          'input-error': passwordControl.touched && passwordControl.invalid
+        }"formControlName = "password" type="password" id="password" placeholder="Password">
+        @if (passwordControl.touched && passwordControl.hasError('reqrequireduierd')) {
+          <app-error message="This field is required"></app-error>
+        }
+        <div class="buttons">
+            @if (editForm()) {
+            <button (click)="edit(false)" class="btn btn-secondary">Cancel</button>
+            <button
+              [disabled]="userForm.invalid"
+              (click)="update()"
+              class="btn btn-primary"
+            >
+              Update
+            </button>
+            } @else {
+            <button (click)="edit(true)" class="btn btn-primary">Edit</button>
+            }
+          </div>
+    </form>
+  </div>

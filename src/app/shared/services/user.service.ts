@@ -9,7 +9,7 @@ import { userRestService } from '../../core/services/user.rest.service';
 export class UserService {
 
   public showSpinner = signal(false);
-  public loggedUser = signal<IUserRegistration | null>(null);
+  public loggedUser = signal<IUserRegistration>({} as IUserRegistration);
   constructor(private UsersRest: userRestService) {}
 
   public getUser(): Observable<IUserRegistration[]> {
@@ -27,4 +27,5 @@ export class UserService {
   public deleteUser(id: number): Observable<IUserRegistration> {
     return this.UsersRest.deleteUser(id);
   }
+
 }

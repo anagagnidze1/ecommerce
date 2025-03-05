@@ -1,19 +1,22 @@
-import { Component, OnInit} from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import { IFurniture } from '../shared/interface/interfaces';
 import { furnitureService } from '../shared/services/furniture.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { CartService } from '../shared/services/cart.service';
 
 @Component({
   selector: 'app-current-item',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './current-item.component.html',
   styleUrl: './current-item.component.scss',
   standalone: true 
 })
 export class CurrentItemComponent implements OnInit{
-  public furnitureList: IFurniture[] = [];
   public currentItem: IFurniture | null = null
-  constructor(private furnitureService: furnitureService, private router: Router,  private route: ActivatedRoute){}
+
+  
+  constructor(private furnitureService: furnitureService, private router: Router,  private route: ActivatedRoute){
+  }
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
       const id = params.get('id');
@@ -35,5 +38,10 @@ export class CurrentItemComponent implements OnInit{
       console.error('Furniture ID is undefined!');
     }
   }
+  public logout(): void {
+    this.router.navigateByUrl('/login');
+  }
+
+  
 
 }

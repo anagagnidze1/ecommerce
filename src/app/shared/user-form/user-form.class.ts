@@ -10,6 +10,7 @@ export abstract class userForm{
     constructor(){}
 
   public userForm = new FormGroup({
+    id: new FormControl<number | null>(null),
     username: new FormControl('',[Validators.required, Validators.minLength(3), usernameValidator()]),
     firstName: new FormControl('',[Validators.required, Validators.minLength(3)]),
     lastName: new FormControl('',[Validators.required, Validators.minLength(3)]),

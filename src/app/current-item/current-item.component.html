@@ -1,4 +1,20 @@
 <div class="background">
+    <header>
+        <nav>
+          <ul>
+            <li><a href="#" class="web-name">DeHome</a></li>
+            <li><a routerLink = "/furnitures">Home</a></li>
+            <li><a href="#" class="">Category</a></li>
+            <li><a class="">About</a></li>
+            <li><a routerLink="/cart">Cart</a></li>
+            <div class="login-register">
+              <img src="https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png" alt="">
+              <img (click)="logout()" src="https://static-00.iconduck.com/assets.00/log-out-icon-2048x2048-cru8zabe.png" alt="">
+            </div>
+    
+          </ul>
+        </nav>
+      </header>
     @if (currentItem){
         <div class="item-container">
             <div class="img-section">

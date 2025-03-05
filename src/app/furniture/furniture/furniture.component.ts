@@ -59,4 +59,11 @@ export class FurnitureComponent implements OnInit {
       )
       .subscribe();
   }
+  public logout(): void {
+    this.router.navigateByUrl('/login');
+  }
+  goToUserInfo(): void {
+    console.log('Navigating to user-info...');
+    this.router.navigate(['/user-info']);
+  }
 }

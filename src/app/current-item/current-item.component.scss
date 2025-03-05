@@ -1,9 +1,59 @@
 .background{
-    background-color: #e2c4a1;
+    background-color: #d8d1d1 ;
+
 }
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color:#997938;
+    border-radius: 10px;
+
+
+    ul {
+      display: flex;
+      gap: 80px;
+      list-style: none;
+      align-items: center;
+
+      .web-name {
+        padding-right: 200px;
+        font-size: 30px;
+      }
+
+      li {
+        a {
+          text-decoration: none;
+          color: black;
+          font-weight: bold;
+
+
+        }
+
+        a:hover {
+          color: white;
+        }
+      }
+      .login-register{
+        display: flex;
+        margin-left: 100px;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        gap: 20px;
+
+      }
+    }
+} 
 .item-container{
     display: flex;
     padding: 50px;
+    padding-top: 150px;
 
     .img-section{
         width: 50%;
@@ -22,7 +72,7 @@
         padding-top: 150px;
         width: 50%;
         button {
-            background-color: #7B560C;
+            background-color:#997938;
             color: white;
             border: none;
             padding: 12px 20px;
