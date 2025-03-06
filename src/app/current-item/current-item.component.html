@@ -2,13 +2,13 @@
     <header>
         <nav>
           <ul>
-            <li><a href="#" class="web-name">DeHome</a></li>
+            <li><a routerLink = "/furnitures" class="web-name">DeHome</a></li>
             <li><a routerLink = "/furnitures">Home</a></li>
-            <li><a href="#" class="">Category</a></li>
-            <li><a class="">About</a></li>
+            <li><a>Category</a></li>
+            <li><a>About</a></li>
             <li><a routerLink="/cart">Cart</a></li>
             <div class="login-register">
-              <img src="https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png" alt="">
+              <img (click)= "goToUserInfo()" src="https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png" alt="">
               <img (click)="logout()" src="https://static-00.iconduck.com/assets.00/log-out-icon-2048x2048-cru8zabe.png" alt="">
             </div>
     
@@ -27,7 +27,11 @@
                     <p>Price: ${{ currentItem.price }}</p>
                     <p>Category: {{ currentItem.category }}</p>
                     <p>{{ currentItem.description }}</p>
-                    <button >Add to Cart</button>
+                    @if (cartService.checkIfFurnitureIsAddedToCart(currentItem)) {
+                      <button class="cart" (click)="deleteFromCart(currentItem)">Delete From Cart</button>
+                    } @else {
+                      <button class="cart" (click)="addToCart(currentItem)">Add To Cart</button>
+                    }
                 </div>
             </div>
         </div>

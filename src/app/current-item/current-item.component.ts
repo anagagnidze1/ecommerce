@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { IFurniture } from '../shared/interface/interfaces';
 import { furnitureService } from '../shared/services/furniture.service';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
@@ -15,7 +15,7 @@ export class CurrentItemComponent implements OnInit{
   public currentItem: IFurniture | null = null
 
   
-  constructor(private furnitureService: furnitureService, private router: Router,  private route: ActivatedRoute){
+  constructor(private furnitureService: furnitureService, private router: Router,  private route: ActivatedRoute, public cartService: CartService){
   }
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
@@ -42,6 +42,18 @@ export class CurrentItemComponent implements OnInit{
     this.router.navigateByUrl('/login');
   }
 
-  
+  goToUserInfo(): void {
+    console.log('Navigating to user-info...');
+    this.router.navigate(['/user-info']);
+  }
+  addToCart(item: IFurniture): void {
+    this.cartService.addToCart(item);
+  }
 
+  deleteFromCart(item: IFurniture): void {
+    this.cartService.delete(item);
+  }
+  isItemInCart(): boolean {
+    return this.currentItem ? this.cartService.checkIfFurnitureIsAddedToCart(this.currentItem) : false;
+  }
 }

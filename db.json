@@ -73,6 +73,14 @@
       "lastName": "sdgfsgf",
       "email": "sdgsd@sdfs",
       "password": "Tkshd7832748923"
+    },
+    {
+      "id": null,
+      "username": "anagagnidze",
+      "firstName": "ana",
+      "lastName": "gagnidze",
+      "email": "anagagnidze123@gmail.com",
+      "password": "Ana12345"
     }
   ]
 }

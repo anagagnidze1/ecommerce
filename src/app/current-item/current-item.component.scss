@@ -1,5 +1,5 @@
 .background{
-    background-color: #d8d1d1 ;
+    background-color: #c5c3c3 ;
 
 }
 
@@ -11,7 +11,7 @@ header {
     display: flex;
     align-items: center;
     padding: 10px;
-    background-color:#997938;
+    background-color:#313453;
     border-radius: 10px;
 
 
@@ -29,7 +29,7 @@ header {
       li {
         a {
           text-decoration: none;
-          color: black;
+          color: white;
           font-weight: bold;
 
 
@@ -72,7 +72,7 @@ header {
         padding-top: 150px;
         width: 50%;
         button {
-            background-color:#997938;
+            background-color:#313453;
             color: white;
             border: none;
             padding: 12px 20px;
@@ -83,7 +83,7 @@ header {
             transition: 0.3s ease-in-out;
             
             &:hover {
-                background-color: #997938;
+                background-color: #6e7085;
                 transform: scale(1.05);
             }
         }

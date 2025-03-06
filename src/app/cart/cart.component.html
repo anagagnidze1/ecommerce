@@ -1,18 +1,35 @@
 <div class="background">
+
+    <header>
+        <nav>
+          <ul>
+            <li><a routerLink = "/furnitures" class="web-name">DeHome</a></li>
+            <li><a routerLink = "/furnitures">Home</a></li>
+            <li><a>Category</a></li>
+            <li><a>About</a></li>
+            <li><a routerLink="/cart">Cart</a></li>
+            <div class="login-register">
+              <img (click)= "goToUserInfo()" src="https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png" alt="">
+              <img (click)="logout()" src="https://static-00.iconduck.com/assets.00/log-out-icon-2048x2048-cru8zabe.png" alt="">
+            </div>
+    
+          </ul>
+        </nav>
+    </header>
     <h1 class="headline">cart</h1>
     @for(furniture of cartService.getCartItems(); track furniture.id){
-        <div class="cart-item">
+        <div (click)="viewItem(furniture.id)" class="cart-item">
             <img [src]="furniture.image" alt="{{ furniture.name }}" class="item-image">
             <div class="item-details">
                 <h2>{{ furniture.name }}</h2>
                 <p>Price: ${{ furniture.price }}</p>
             </div>
             <div class="quantity-controls">
-                <button class="qty-btn" (click)="cartService.decrementQuantity(furniture.id)">−</button>
+                <button class="qty-btn" (click)="cartService.decrementQuantity(furniture.id); $event.stopPropagation()">−</button>
                 <span class="quantity">{{ furniture.quantity }}</span>
-                <button class="qty-btn" (click)="cartService.incrementQuantity(furniture.id)">+</button>
+                <button class="qty-btn" (click)="cartService.incrementQuantity(furniture.id); $event.stopPropagation()">+</button>
             </div>
-            <button (click)="deleteFromCart(furniture)" class="delete-btn">Remove</button>
+            <button (click)="deleteFromCart(furniture); $event.stopPropagation()" class="delete-btn">Remove</button>
         </div>
     }
     <div class="total-section">

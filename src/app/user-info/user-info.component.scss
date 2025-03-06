@@ -1,11 +1,59 @@
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color:#313453;
+    border-radius: 10px;
+
+
+    ul {
+      display: flex;
+      gap: 80px;
+      list-style: none;
+      align-items: center;
+
+      .web-name {
+        padding-right: 200px;
+        font-size: 30px;
+      }
+
+      li {
+        a {
+          text-decoration: none;
+          color: white;
+          font-weight: bold;
+
+
+        }
+
+        a:hover {
+          color: white;
+        }
+      }
+      .login-register{
+        display: flex;
+        margin-left: 100px;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        gap: 20px;
+
+      }
+    }
+} 
 .form-section{
-    background-color: rgba(17, 24, 34, 1);
+    background-color: #c5c3c3;
     padding: 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
     height: 100vh;
+    padding-top: 100px;
 
     form{
         display: flex;
@@ -28,11 +76,12 @@
         input {
             width: 50%;
             padding: 12px;
-            background:#4D5259;
+            background:#313453;
             border: none;
             border-radius: 10px;
             color: white;
             outline: none;
         }
+
     }
 }

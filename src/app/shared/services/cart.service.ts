@@ -31,7 +31,7 @@ export class CartService {
     let item = this.items.find((i) => i.id === id)
     if (item) {
       item.quantity = (item.quantity ?? 0) + 1;
-      localStorage.setItem('items', JSON.stringify(this.items)); // Ensure the updated quantity is saved
+      localStorage.setItem('items', JSON.stringify(this.items));
     }
   }
   decrementQuantity(id:number){
