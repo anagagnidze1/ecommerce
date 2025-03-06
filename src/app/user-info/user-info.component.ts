@@ -6,11 +6,12 @@ import { ErrorComponent } from '../shared/error/error.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { IUserRegistration } from '../shared/interface/users';
 import { catchError, delay, finalize, of, tap } from 'rxjs';
-import { Router, RouterLink } from '@angular/router';
+import { Router} from '@angular/router';
+import { NavigationComponent } from '../navigation/navigation.component';
 
 @Component({
   selector: 'app-user-info',
-  imports: [NgClass, ErrorComponent, ReactiveFormsModule, RouterLink],
+  imports: [NgClass, ErrorComponent, ReactiveFormsModule,NavigationComponent],
   templateUrl: './user-info.component.html',
   styleUrl: './user-info.component.scss',
 })
@@ -22,10 +23,6 @@ export class UserInfoComponent extends userForm implements OnInit {
   }
 
   public ngOnInit() {
-    console.log(
-      'User info component initialized!',
-      this.userService.loggedUser()
-    );
     this.userForm.patchValue(this.userService.loggedUser());
     this.userForm.disable();
   }
@@ -61,12 +58,5 @@ export class UserInfoComponent extends userForm implements OnInit {
         )
         .subscribe();
     }
-  }
-  goToUserInfo(): void {
-    console.log('Navigating to user-info...');
-    this.router.navigate(['/user-info']);
-  }
-  public logout(): void {
-    this.userService.logout();
   }
 }

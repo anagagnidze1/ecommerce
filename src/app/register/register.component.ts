@@ -24,19 +24,14 @@ export class RegisterComponent extends userForm{
 
   constructor(public userService: UserService, private router: Router){
     super()
-
-
-    console.log("component is logged")
   }
 
   public register(){
-    console.log("register");
 
     if (this.userForm.valid) {
       this.userService.showSpinner.set(true);
       const userInfo = this.userForm.value as IUserRegistration;
       
-      console.log('User info:', userInfo);
   
       this.userService.createUser(userInfo).pipe(
         delay(2000),
@@ -55,11 +50,7 @@ export class RegisterComponent extends userForm{
         })
       ).subscribe();
      
-    } else {
-      console.log('Form is invalid');
     }
-  
-    
   }
   public login(){
     this.router.navigateByUrl('/login');

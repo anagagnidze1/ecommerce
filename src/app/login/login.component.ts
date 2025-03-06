@@ -30,7 +30,6 @@ export class LoginComponent extends LoginRegister {
     super();
 
     this.mySubj.subscribe((value) => {
-      console.log(value);
     });
   }
   public login() {

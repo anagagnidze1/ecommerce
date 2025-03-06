@@ -1,19 +1,4 @@
-<header>
-  <nav>
-    <ul>
-      <li><a routerLink = "/furnitures" class="web-name">DeHome</a></li>
-      <li><a routerLink = "/furnitures">Home</a></li>
-      <li><a>Category</a></li>
-      <li><a>About</a></li>
-      <li><a routerLink="/cart">Cart</a></li>
-      <div class="login-register">
-        <img (click)= "goToUserInfo()" src="https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png" alt="">
-        <img (click)="logout()" src="https://static-00.iconduck.com/assets.00/log-out-icon-2048x2048-cru8zabe.png" alt="">
-      </div>
-
-    </ul>
-  </nav>
-</header>
+<app-navigation></app-navigation>
 <div class="form-section">
     <form [formGroup] = "userForm">
       <input 

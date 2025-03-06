@@ -25,13 +25,9 @@ export class FurnitureComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     public userServ: UserService
-  ) {
-    console.log('FurnitureComponent initialized!');
-  }
+  ) {}
   public ngOnInit() {
-    console.log('active route:', this.route);
     this.furniture$.next(this.route.snapshot.data['furnitures']);
-    // this.getFurniture();
   }
 
   viewItem(id: number): void {
@@ -55,7 +51,6 @@ export class FurnitureComponent implements OnInit {
           return of([]);
         }),
         tap((furniture: IFurniture[]) => {
-          console.log('customers: ', furniture);
           this.furniture$.next(furniture);
         })
       )
@@ -65,7 +60,6 @@ export class FurnitureComponent implements OnInit {
     this.userServ.logout();
   }
   goToUserInfo(): void {
-    console.log('Navigating to user-info...');
     this.router.navigate(['/user-info']);
   }
 

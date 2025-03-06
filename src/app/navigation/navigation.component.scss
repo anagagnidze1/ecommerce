@@ -1,0 +1,62 @@
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+    background-color: #313453;
+
+    nav{
+      width: 100%;
+    }
+    ul {
+      display: flex;
+      gap: 80px;
+      list-style: none;
+      align-items: center;
+      justify-content: space-between;
+
+      .nav-links{
+        display: flex;
+        gap: 50px;
+        cursor: pointer;
+
+      }
+      .web-name {
+        padding-right: 70px;
+        font-size: 30px;
+      }
+
+      li {
+        a {
+          text-decoration: none;
+          color: white;
+          font-weight: bold;
+
+        }
+
+        a:hover {
+          color: gray;
+        }
+      }
+      .login-register{
+        width: 30px;
+        height: 30px;
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        flex-shrink: 0;
+        margin-right: 100px;
+        cursor: pointer;
+
+        img{
+            width: 30px;
+            height: 30px;
+        }
+      }
+    } 
+  }

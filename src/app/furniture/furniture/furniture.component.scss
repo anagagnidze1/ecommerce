@@ -20,17 +20,27 @@
     width: 100%;
     display: flex;
     align-items: center;
-    padding: 50px;
+    padding: 30px;
+    box-sizing: border-box;
+    overflow: hidden;
 
-
+    nav{
+      width: 100%;
+    }
     ul {
       display: flex;
       gap: 80px;
       list-style: none;
       align-items: center;
+      justify-content: space-between;
 
+      .nav-links{
+        display: flex;
+        gap: 50px;
+        cursor: pointer;
+      }
       .web-name {
-        padding-right: 200px;
+        padding-right: 70px;
         font-size: 30px;
       }
 
@@ -39,7 +49,7 @@
           text-decoration: none;
           color: black;
           font-weight: bold;
-
+          cursor: pointer;
 
         }
 
@@ -48,13 +58,14 @@
         }
       }
       .login-register{
-        display: flex;
-        margin-left: 100px;
+        cursor: pointer;
         width: 30px;
         height: 30px;
-        cursor: pointer;
+        display: flex;
         gap: 20px;
-
+        align-items: center;
+        flex-shrink: 0;
+        margin-right: 100px;
       }
     } 
   }
@@ -226,7 +237,7 @@
 
   img{
     width: 100%;
-    height: 600px;
+
     display: block;
   }
   .about-us{
@@ -240,6 +251,8 @@
     right: 10%;
     transform: translateY(-50%);
     color: white;
+    min-width: 250px;
+    max-width: 400px; 
 
     button{
       background: white;
@@ -272,6 +285,7 @@ footer{
   max-width: 1200px;
   margin: auto;
   color: white;
+
 }
 .links {
   display: flex;

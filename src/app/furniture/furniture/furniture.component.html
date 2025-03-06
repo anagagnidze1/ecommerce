@@ -8,10 +8,12 @@
       <nav>
         <ul>
           <li><a class="web-name">DeHome</a></li>
-          <li><a class="">Home</a></li>
-          <li><a class="">Category</a></li>
-          <li><a (click)="scrollToBottom()">About</a></li>
-          <li><a routerLink="/cart">Cart</a></li>
+          <div class="nav-links">
+            <li><a class="">Home</a></li>
+            <li><a (click)="scrollToBottom()">About</a></li>
+            <li><a routerLink="/cart">Cart</a></li>
+          </div>
+
           @if (userServ.userLogged) {
           <div class="login-register">
             <img

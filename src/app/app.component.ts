@@ -14,19 +14,13 @@ export class AppComponent {
   public loginPage = true;
 
 
-  constructor(public userService: UserService){
-    console.log("app component innited")
-  }
+  constructor(public userService: UserService){}
 
 
   public goToLogin(){
     this.loginPage = true;
-    console.log("app component")
   }
   public register(){
     this.loginPage = false;
-    console.log("app component register")
   }
-
-
 }
