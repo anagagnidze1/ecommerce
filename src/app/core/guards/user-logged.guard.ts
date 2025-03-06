@@ -10,9 +10,9 @@ export const userLoggedGuard: CanActivateFn = (route, state) => {
     JSON.parse(localStorage.getItem('user') as string);
   userService.loggedUser.set(loggedUser);
 
-  if (!loggedUser) {
+  if (!loggedUser.id) {
     router.navigateByUrl('/login');
   }
 
-  return !!loggedUser;
+  return !!loggedUser.id;
 };

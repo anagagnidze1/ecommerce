@@ -55,8 +55,10 @@ export const routes: Routes = [
     title: 'user-info',
     path: 'user-info',
     loadComponent: () =>
-      import('./user-info/user-info.component').then((c) => c.UserInfoComponent),
-
+      import('./user-info/user-info.component').then(
+        (c) => c.UserInfoComponent
+      ),
+    canActivate: [userLoggedGuard],
   },
   {
     path: '**',
@@ -65,5 +67,4 @@ export const routes: Routes = [
         (c) => c.PageNotFoundComponent
       ),
   },
-
 ];

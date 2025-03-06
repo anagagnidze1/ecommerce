@@ -10,34 +10,37 @@ import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-user-info',
-  imports: [NgClass, ErrorComponent,ReactiveFormsModule, RouterLink],
+  imports: [NgClass, ErrorComponent, ReactiveFormsModule, RouterLink],
   templateUrl: './user-info.component.html',
-  styleUrl: './user-info.component.scss'
+  styleUrl: './user-info.component.scss',
 })
-export class UserInfoComponent extends userForm implements OnInit{
+export class UserInfoComponent extends userForm implements OnInit {
   public editForm = signal(false);
 
-  constructor(private userService: UserService, private router: Router){
+  constructor(private userService: UserService, private router: Router) {
     super();
-
   }
 
-  public ngOnInit(){
-    this.userForm.patchValue(this.userService.loggedUser())
+  public ngOnInit() {
+    console.log(
+      'User info component initialized!',
+      this.userService.loggedUser()
+    );
+    this.userForm.patchValue(this.userService.loggedUser());
     this.userForm.disable();
   }
 
-  public edit(edit : boolean){
+  public edit(edit: boolean) {
     this.editForm.set(edit);
-    if(edit){
+    if (edit) {
       this.userForm.enable();
-    }else{
+    } else {
       this.userForm.disable();
     }
   }
 
-  public update(){
-    if(this.userForm.valid){
+  public update() {
+    if (this.userForm.valid) {
       this.userService.showSpinner.set(true);
       const userInfo = {
         ...this.userService.loggedUser(),
@@ -49,6 +52,7 @@ export class UserInfoComponent extends userForm implements OnInit{
           delay(2000),
           tap((user) => {
             this.edit(false);
+            this.userService.loggedUser.set(user);
           }),
           catchError((error) => {
             return of();
@@ -63,6 +67,6 @@ export class UserInfoComponent extends userForm implements OnInit{
     this.router.navigate(['/user-info']);
   }
   public logout(): void {
-    this.router.navigateByUrl('/login');
+    this.userService.logout();
   }
 }

@@ -7,16 +7,25 @@
     <header>
       <nav>
         <ul>
-          <li><a href="#" class="web-name">DeHome</a></li>
-          <li><a href="#" class="">Home</a></li>
-          <li><a href="#" class="">Category</a></li>
-          <li><a href="#footer-content">About</a></li>
+          <li><a class="web-name">DeHome</a></li>
+          <li><a class="">Home</a></li>
+          <li><a class="">Category</a></li>
+          <li><a (click)="scrollToBottom()">About</a></li>
           <li><a routerLink="/cart">Cart</a></li>
+          @if (userServ.userLogged) {
           <div class="login-register">
-            <img (click)= "goToUserInfo()" src="https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png" alt="">
-            <img (click)="logout()" src="https://static-00.iconduck.com/assets.00/log-out-icon-2048x2048-cru8zabe.png" alt="">
+            <img
+              (click)="goToUserInfo()"
+              src="https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png"
+              alt=""
+            />
+            <img
+              (click)="logout()"
+              src="https://static-00.iconduck.com/assets.00/log-out-icon-2048x2048-cru8zabe.png"
+              alt=""
+            />
           </div>
-  
+          }
         </ul>
       </nav>
     </header>
@@ -25,28 +34,28 @@
   <h1 class="headline">Discover Unparalleled Furniture Designs</h1>
   <div class="container">
     @for (furniture of furniture$ | async; track $index){
-      <div (click)="viewItem(furniture.id)" class="item">
-        <img [src]="furniture.image" alt="{{ furniture.name }}" width="200" />
-        <p class="name">{{ furniture.name }}</p>
-        <div class="price-cart">
-          <p class="price">Price: ${{ furniture.price }}</p>
-          @if (cartService.checkIfFurnitureIsAddedToCart(furniture)) {
-          <button
-            class="cart"
-            (click)="delete(furniture); $event.stopPropagation()"
-          >
-            Delete From Cart
-          </button>
-          } @else {
-          <button
-            class="cart"
-            (click)="addToCart(furniture); $event.stopPropagation()"
-          >
-            Add To Cart
-          </button>
-          }
-        </div>
+    <div (click)="viewItem(furniture.id)" class="item">
+      <img [src]="furniture.image" alt="{{ furniture.name }}" width="200" />
+      <p class="name">{{ furniture.name }}</p>
+      <div class="price-cart">
+        <p class="price">Price: ${{ furniture.price }}</p>
+        @if (cartService.checkIfFurnitureIsAddedToCart(furniture)) {
+        <button
+          class="cart"
+          (click)="delete(furniture); $event.stopPropagation()"
+        >
+          Delete From Cart
+        </button>
+        } @else {
+        <button
+          class="cart"
+          (click)="addToCart(furniture); $event.stopPropagation()"
+        >
+          Add To Cart
+        </button>
+        }
       </div>
+    </div>
     }
   </div>
   <div class="imgcont2">
@@ -60,80 +69,100 @@
   <h1 class="headline">Best Seller Products</h1>
   <div class="grid-container">
     <div class="card large">
-        <img src="https://images.unsplash.com/photo-1489269637500-aa0e75768394?q=80&w=1441&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Minimal Chair">
-        <div class="overlay">
-            <h3>Minimal Chair</h3>
-            <p>Modern Living Room Chair</p>
-            <button>Explore</button>
-        </div>
+      <img
+        src="https://images.unsplash.com/photo-1489269637500-aa0e75768394?q=80&w=1441&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="Minimal Chair"
+      />
+      <div class="overlay">
+        <h3>Minimal Chair</h3>
+        <p>Modern Living Room Chair</p>
+        <button>Explore</button>
+      </div>
     </div>
     <div class="card small">
-        <img src="https://images.unsplash.com/photo-1598300056393-4aac492f4344?q=80&w=1434&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Modern Chair">
-        <div class="overlay">
-            <h3>Modern Chair</h3>
-            <button>Explore</button>
-        </div>
+      <img
+        src="https://images.unsplash.com/photo-1598300056393-4aac492f4344?q=80&w=1434&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="Modern Chair"
+      />
+      <div class="overlay">
+        <h3>Modern Chair</h3>
+        <button>Explore</button>
+      </div>
     </div>
     <div class="card small">
-        <img src="https://images.unsplash.com/photo-1590251024078-8a6d9f90b02d?q=80&w=1378&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Modern Sofa Set">
-        <div class="overlay">
-            <h3>Modern Sofa Set</h3>
-            <button>Explore</button>
-        </div>
+      <img
+        src="https://images.unsplash.com/photo-1590251024078-8a6d9f90b02d?q=80&w=1378&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="Modern Sofa Set"
+      />
+      <div class="overlay">
+        <h3>Modern Sofa Set</h3>
+        <button>Explore</button>
+      </div>
     </div>
     <div class="card large">
-        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1558&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Modern Interior Collection Sets">
-        <div class="overlay">
-            <h3>Modern Interior Collection Sets</h3>
-            <button>Explore</button>
-        </div>
+      <img
+        src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1558&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="Modern Interior Collection Sets"
+      />
+      <div class="overlay">
+        <h3>Modern Interior Collection Sets</h3>
+        <button>Explore</button>
+      </div>
     </div>
   </div>
 
   <div class="about-us-cont">
-    <img src="https://images.unsplash.com/photo-1606744824163-985d376605aa?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+    <img
+      src="https://images.unsplash.com/photo-1606744824163-985d376605aa?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    />
     <div class="about-us">
       <h2>About Us</h2>
-      <p>Lorem ipsum dolor sit amet consectetur. Quis consequat sed malesuada cras dictum fermentum turpis.</p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur. Quis consequat sed malesuada
+        cras dictum fermentum turpis.
+      </p>
       <button>Contact Us</button>
-  </div>
-  <footer>
-    <div id="footer-content">
-        <h3>Comfort Craft</h3>
-        <p>Design amazing digital experiences that create more happy in the world.</p>
-        <div class="links">
-            <div class="shop">
-                <h4>Shop</h4>
-                <ul>
-                    <li>Modern Chair</li>
-                    <li>Modern Sofas</li>
-                    <li>Marble Chairs</li>
-                    <li>Wooden</li>
-                    <li>Discounts</li>
-                </ul>
-            </div>
-            <div class="company">
-                <h4>Company</h4>
-                <ul>
-                    <li>About Us</li>
-                    <li>Careers</li>
-                    <li>Investors</li>
-                    <li>News</li>
-                    <li>Purpose</li>
-                </ul>
-            </div>
-            <div class="support">
-                <h4>Support</h4>
-                <ul>
-                    <li>Order Status</li>
-                    <li>Shipping & Delivery</li>
-                    <li>Returns</li>
-                    <li>Payment Option</li>
-                    <li>Contact</li>
-                </ul>
-            </div>
-        </div>
     </div>
-  </footer>
-
+    <footer>
+      <div id="footer-content">
+        <h3>Comfort Craft</h3>
+        <p>
+          Design amazing digital experiences that create more happy in the
+          world.
+        </p>
+        <div class="links">
+          <div class="shop">
+            <h4>Shop</h4>
+            <ul>
+              <li>Modern Chair</li>
+              <li>Modern Sofas</li>
+              <li>Marble Chairs</li>
+              <li>Wooden</li>
+              <li>Discounts</li>
+            </ul>
+          </div>
+          <div class="company">
+            <h4>Company</h4>
+            <ul>
+              <li>About Us</li>
+              <li>Careers</li>
+              <li>Investors</li>
+              <li>News</li>
+              <li>Purpose</li>
+            </ul>
+          </div>
+          <div class="support">
+            <h4>Support</h4>
+            <ul>
+              <li>Order Status</li>
+              <li>Shipping & Delivery</li>
+              <li>Returns</li>
+              <li>Payment Option</li>
+              <li>Contact</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
 </div>

@@ -5,6 +5,7 @@ import { furnitureService } from '../../shared/services/furniture.service';
 import { AsyncPipe } from '@angular/common';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { CartService } from '../../shared/services/cart.service';
+import { UserService } from '../../shared/services/user.service';
 
 @Component({
   selector: 'app-furniture',
@@ -22,7 +23,8 @@ export class FurnitureComponent implements OnInit {
     public furnitureService: furnitureService,
     public cartService: CartService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    public userServ: UserService
   ) {
     console.log('FurnitureComponent initialized!');
   }
@@ -60,10 +62,14 @@ export class FurnitureComponent implements OnInit {
       .subscribe();
   }
   public logout(): void {
-    this.router.navigateByUrl('/login');
+    this.userServ.logout();
   }
   goToUserInfo(): void {
     console.log('Navigating to user-info...');
     this.router.navigate(['/user-info']);
+  }
+
+  public scrollToBottom(): void {
+    window.scrollTo(0, document.body.scrollHeight);
   }
 }
